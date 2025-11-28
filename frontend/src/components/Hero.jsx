@@ -5,18 +5,18 @@ export default function Hero() {
     <section className="hero relative flex flex-col md:flex-row items-center justify-center h-[90vh] overflow-hidden bg-white dark:bg-black gap-8 md:gap-16 px-4">
 
       {/* Left Content */}
-      <div className="hero-content flex flex-col items-center md:items-start text-center md:text-left max-w-2xl">
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-4 text-primary drop-shadow-lg">
+      <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-2xl">
+        <h1 className="hero-heading text-5xl md:text-7xl font-extrabold mb-4 text-primary drop-shadow-lg">
           Kiruthikbairavan C
         </h1>
-        <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-semibold mb-4">
+        <h2 className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-semibold mb-4">
           Full-Stack Developer & Software Systems Student
         </h2>
-        <p className="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-200 font-medium">
+        <p className="hero-text text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-200 font-medium">
           To leverage my technical skills and problem-solving abilities to contribute to innovative software solutions.
         </p>
 
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-8">
+        <div className="hero-buttons flex flex-wrap gap-4 justify-center md:justify-start mb-8">
           <a
             href="/resume.pdf"
             download
@@ -32,7 +32,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="flex gap-4 justify-center md:justify-start">
+        <div className="hero-socials flex gap-4 justify-center md:justify-start">
           <a href="https://github.com/kiruthik13" target="_blank" rel="noopener noreferrer" className="social-chip" aria-label="GitHub">
             GH
           </a>

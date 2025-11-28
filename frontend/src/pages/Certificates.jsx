@@ -49,6 +49,7 @@ export default function Certificates() {
             <div className="cert-card" key={`cert-${idx}`}>
               <div className="cert-media">
                 <img src={item.file || '/resume.pdf'} alt={item.subheading || item.heading} />
+                <a className="cert-view" href={item.file || '#'} target="_blank" rel="noopener noreferrer">👁 View Full</a>
 
               </div>
               <div className="cert-card-body">

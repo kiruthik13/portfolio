@@ -21,6 +21,7 @@ export default function Internships() {
             <div className="cert-card" key={`internship-${idx}`}>
               <div className="cert-media">
                 <img src="/intern-certificate.png" alt={item.heading} />
+                <a className="cert-view" href={item.file || '#'} target="_blank" rel="noopener noreferrer">👁 View Letter</a>
 
               </div>
               <div className="cert-card-body">

@@ -8,7 +8,7 @@ export default function Navbar() {
     try {
       const stored = localStorage.getItem('theme');
       if (stored) return stored;
-    } catch (e) {}
+    } catch (e) { }
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   });
 
@@ -16,7 +16,7 @@ export default function Navbar() {
     // apply theme to document body
     if (theme === 'light') document.documentElement.classList.add('light');
     else document.documentElement.classList.remove('light');
-    try { localStorage.setItem('theme', theme); } catch (e) {}
+    try { localStorage.setItem('theme', theme); } catch (e) { }
   }, [theme]);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="navbar">
+    <header className="navbar navbar-animate">
       <div className="container navbar-inner">
         <a href="#home" className="brand" onClick={(e) => handleNavClick(e, 'home')}>Kiruthik</a>
         <nav className="nav-links">
@@ -75,16 +75,16 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-          <div style={{display:'flex',alignItems:'center',gap:8}}>
-            <button
-              className="dark-toggle"
-              onClick={() => setTheme(prev => prev === 'light' ? 'dark' : 'light')}
-              aria-label="Toggle color theme"
-              title={theme === 'light' ? 'Switch to dark' : 'Switch to light'}
-            >
-              {theme === 'light' ? '🌞' : '🌙'}
-            </button>
-          </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button
+            className="dark-toggle"
+            onClick={() => setTheme(prev => prev === 'light' ? 'dark' : 'light')}
+            aria-label="Toggle color theme"
+            title={theme === 'light' ? 'Switch to dark' : 'Switch to light'}
+          >
+            {theme === 'light' ? '🌞' : '🌙'}
+          </button>
+        </div>
       </div>
     </header>
   );

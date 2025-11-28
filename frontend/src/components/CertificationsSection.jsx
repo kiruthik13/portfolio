@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const certifications = [
   'Cybersecurity certification from NPTEL',
   'Completed Infosys SpringBoard course on Bootstrap 4',
@@ -9,22 +7,20 @@ const certifications = [
 export default function CertificationsSection() {
   return (
     <section className="max-w-3xl mx-auto py-12 px-4">
-      <motion.h2 className="text-3xl font-bold mb-6 text-primary" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+      <h2 className="text-3xl font-bold mb-6 text-primary animate-slide-up">
         Certifications
-      </motion.h2>
+      </h2>
       <ul className="space-y-4">
         {certifications.map((cert, idx) => (
-          <motion.li
+          <li
             key={cert}
-            className="bg-white/80 dark:bg-gray-900/80 rounded-xl shadow p-4 text-lg text-gray-800 dark:text-gray-200 border border-primary/20"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1 }}
+            className="bg-white/80 dark:bg-gray-900/80 rounded-xl shadow p-4 text-lg text-gray-800 dark:text-gray-200 border border-primary/20 card-hover-effect animate-slide-up"
+            style={{ animationDelay: `${idx * 100}ms` }}
           >
             {cert}
-          </motion.li>
+          </li>
         ))}
       </ul>
     </section>
   );
-} 
+}

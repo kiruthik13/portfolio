@@ -1,13 +1,8 @@
-import { motion } from 'framer-motion';
-
 export default function ProjectCard({ project, onClick, idx }) {
   return (
-    <motion.div
-      className="relative group cursor-pointer overflow-hidden rounded-3xl shadow-xl bg-white dark:bg-gray-900"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: idx * 0.15, duration: 0.7, type: 'spring' }}
-      whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,180,0.18)' }}
+    <div
+      className="relative group cursor-pointer overflow-hidden rounded-3xl shadow-xl bg-white dark:bg-gray-900 card-hover-effect animate-slide-up"
+      style={{ animationDelay: `${idx * 150}ms` }}
       onClick={onClick}
     >
       <img
@@ -20,6 +15,6 @@ export default function ProjectCard({ project, onClick, idx }) {
         <div className="text-white/80 text-sm mb-1">{project.client} &middot; {project.year}</div>
         <p className="text-white/90 text-base line-clamp-2">{project.description}</p>
       </div>
-    </motion.div>
+    </div>
   );
-} 
+}

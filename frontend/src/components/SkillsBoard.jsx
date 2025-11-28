@@ -1,8 +1,12 @@
 const mockSkills = [
-  { name: 'React.js', proficiency: 95, icon: '⚛️' },
-  { name: 'Node.js', proficiency: 90, icon: '🟩' },
-  { name: 'Tailwind CSS', proficiency: 85, icon: '💨' },
-  { name: 'Framer Motion', proficiency: 80, icon: '🎞️' },
+  { name: 'DevOps', proficiency: 85, icon: '♾️' },
+  { name: 'Java', proficiency: 90, icon: '☕' },
+  { name: 'React', proficiency: 95, icon: '⚛️' },
+  { name: 'Bootstrap', proficiency: 85, icon: '🅱️' },
+  { name: 'Figma', proficiency: 80, icon: '🎨' },
+  { name: 'MongoDB', proficiency: 85, icon: '🍃' },
+  { name: 'Firebase', proficiency: 80, icon: '🔥' },
+  { name: 'Vercel', proficiency: 90, icon: '▲' },
 ];
 
 export default function SkillsBoard() {

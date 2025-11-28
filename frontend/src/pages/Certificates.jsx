@@ -49,19 +49,16 @@ export default function Certificates() {
             <div className="cert-card" key={`cert-${idx}`}>
               <div className="cert-media">
                 <img src={item.file || '/resume.pdf'} alt={item.subheading || item.heading} />
-                <a className="cert-view" href={item.file || '#'} target="_blank" rel="noopener noreferrer">👁 View Full</a>
+
               </div>
               <div className="cert-card-body">
-                <div style={{display:'flex',gap:8,alignItems:'center',flexWrap:'wrap'}}>
+                <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
                   <span className="chip">Professional Certification</span>
                   {item.year && <span className="chip year">{item.year}</span>}
                 </div>
-                <h4 className="cert-title" style={{marginTop:10}}>{item.subheading}</h4>
+                <h4 className="cert-title" style={{ marginTop: 10 }}>{item.subheading}</h4>
                 <div className="cert-issuer">Issued by <strong>{item.heading}</strong></div>
-                <div style={{marginTop:12}}>
-                  <a className="btn" href={item.file} target="_blank" rel="noopener noreferrer" style={{marginRight:8}}>View</a>
-                  <a className="btn btn-primary" href={item.file} download>Download</a>
-                </div>
+
               </div>
             </div>
           ))}

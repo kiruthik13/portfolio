@@ -1,3 +1,6 @@
+import Carousel from '../components/Carousel';
+import ScrollAnimationWrapper from '../components/ScrollAnimationWrapper';
+
 const projects = [
   {
     title: 'Environment Waste Management System - "Ease" App',
@@ -30,25 +33,71 @@ const projects = [
 ];
 
 export default function Projects() {
+  // Create carousel items
+  const carouselItems = projects.map(p => (
+    <article className="card project-card" key={p.title} style={{ margin: '0 10px' }}>
+      <img src={p.image} alt={p.title} />
+      <div className="project-title">
+        <h3 style={{ margin: 0 }}>{p.title}</h3>
+        {p.url !== '#' && <a className="external" href={p.url} target="_blank" rel="noopener noreferrer" aria-label="Open project">↗</a>}
+      </div>
+      <p className="muted">{p.desc}</p>
+      {p.tech && <p style={{ marginTop: '8px', fontSize: '13px', color: 'var(--pink)' }}><strong>Tech Stack:</strong> {p.tech}</p>}
+    </article>
+  ));
+
   return (
     <section id="projects" className="section" style={{ scrollMarginTop: '90px' }}>
       <div className="container">
-        <h2 className="section-title">Projects</h2>
-        <div className="projects-grid">
-          {projects.map(p => (
-            <article className="card project-card" key={p.title}>
-              <img src={p.image} alt={p.title} />
-              <div className="project-title">
-                <h3 style={{ margin: 0 }}>{p.title}</h3>
-                {p.url !== '#' && <a className="external" href={p.url} target="_blank" rel="noopener noreferrer" aria-label="Open project">↗</a>}
-              </div>
-              <p className="muted">{p.desc}</p>
-              {p.tech && <p style={{ marginTop: '8px', fontSize: '13px', color: 'var(--pink)' }}><strong>Tech Stack:</strong> {p.tech}</p>}
-            </article>
+        <ScrollAnimationWrapper>
+          <h2 className="section-title">Projects</h2>
+        </ScrollAnimationWrapper>
+
+        {/* Desktop: Grid View with Scroll Animations */}
+        <div className="projects-grid" style={{ display: 'none' }}>
+          {projects.map((p, index) => (
+            <ScrollAnimationWrapper key={p.title} delay={index * 100}>
+              <article className="card project-card">
+                <img src={p.image} alt={p.title} />
+                <div className="project-title">
+                  <h3 style={{ margin: 0 }}>{p.title}</h3>
+                  {p.url !== '#' && <a className="external" href={p.url} target="_blank" rel="noopener noreferrer" aria-label="Open project">↗</a>}
+                </div>
+                <p className="muted">{p.desc}</p>
+                {p.tech && <p style={{ marginTop: '8px', fontSize: '13px', color: 'var(--pink)' }}><strong>Tech Stack:</strong> {p.tech}</p>}
+              </article>
+            </ScrollAnimationWrapper>
           ))}
         </div>
+
+        {/* Carousel View */}
+        <div style={{ display: 'block' }}>
+          <Carousel
+            items={carouselItems}
+            autoPlay={true}
+            interval={4000}
+            showDots={true}
+            showArrows={true}
+          />
+        </div>
       </div>
+
+      <style>{`
+        @media (min-width: 980px) {
+          .projects-grid {
+            display: grid !important;
+          }
+          .projects-grid + div {
+            display: none !important;
+          }
+        }
+        
+        .carousel-arrow:hover {
+          background: rgba(255, 0, 85, 0.8) !important;
+          transform: translateY(-50%) scale(1.1) !important;
+          box-shadow: 0 0 20px rgba(255, 0, 85, 0.5) !important;
+        }
+      `}</style>
     </section>
   );
 }
-

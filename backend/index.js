@@ -36,6 +36,7 @@ app.use(express.json());
 const allowedOrigins = [
   'https://portfolio-amber-nine-c7ciranvuy.vercel.app',
   'http://localhost:5173',
+  'http://localhost:5174',
   'http://localhost:3000'
 ];
 

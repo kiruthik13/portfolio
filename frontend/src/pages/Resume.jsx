@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ScrollAnimationWrapper from '../components/ScrollAnimationWrapper';
 
 const resumeSections = [
   {
@@ -63,40 +64,43 @@ export default function Resume() {
   return (
     <section id="resume" className="section" style={{ scrollMarginTop: '90px' }}>
       <div className="container">
-        <h2 className="section-title">Resume</h2>
+        <ScrollAnimationWrapper>
+          <h2 className="section-title">Resume</h2>
+        </ScrollAnimationWrapper>
         <div className="grid grid-2" style={{ alignItems: 'start' }}>
           {resumeSections.map((section, index) => {
             const isOpen = openSections[index];
             return (
-              <div
-                key={section.title}
-                className={`card resume-card ${isOpen ? 'open' : ''}`}
-                onClick={() => toggleSection(index)}
-                style={section.title === 'Certifications' || section.title === 'Internship' ? { gridColumn: '1 / -1' } : {}}
-              >
-                <div className="resume-card-header">
-                  <h3>{section.title}</h3>
-                  <span className="resume-card-toggle">{isOpen ? '−' : '+'}</span>
-                </div>
-                {isOpen && (
-                  <div className="resume-card-body">
-                    {section.items.map(item => (
-                      <div key={`${section.title}-${item.heading}`} className="resume-card-item">
-                        <div className="resume-card-heading">{item.heading}</div>
-                        {item.subheading && <div className="resume-card-subheading">{item.subheading}</div>}
-                        {item.timeline && <div className="resume-card-dates">{item.timeline}</div>}
-                        {item.points && (
-                          <ul className="resume-card-points">
-                            {item.points.map(point => (
-                              <li key={point}>{point}</li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    ))}
+              <ScrollAnimationWrapper key={section.title} delay={index * 100}>
+                <div
+                  className={`card resume-card ${isOpen ? 'open' : ''}`}
+                  onClick={() => toggleSection(index)}
+                  style={section.title === 'Certifications' || section.title === 'Internship' ? { gridColumn: '1 / -1' } : {}}
+                >
+                  <div className="resume-card-header">
+                    <h3>{section.title}</h3>
+                    <span className="resume-card-toggle">{isOpen ? '−' : '+'}</span>
                   </div>
-                )}
-              </div>
+                  {isOpen && (
+                    <div className="resume-card-body" style={{ animation: 'fadeInDown 0.3s ease-out' }}>
+                      {section.items.map((item, itemIndex) => (
+                        <div key={`${section.title}-${item.heading}-${itemIndex}`} className="resume-card-item">
+                          <div className="resume-card-heading">{item.heading}</div>
+                          {item.subheading && <div className="resume-card-subheading">{item.subheading}</div>}
+                          {item.timeline && <div className="resume-card-dates">{item.timeline}</div>}
+                          {item.points && (
+                            <ul className="resume-card-points">
+                              {item.points.map(point => (
+                                <li key={point}>{point}</li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </ScrollAnimationWrapper>
             );
           })}
         </div>
@@ -104,4 +108,3 @@ export default function Resume() {
     </section>
   );
 }
-

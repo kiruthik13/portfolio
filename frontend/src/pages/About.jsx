@@ -47,7 +47,7 @@ export default function About() {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={200}>
-              <p className="about-text">
+              <p className="about-text" style={{ textAlign: 'justify' }}>
                 I'm a Master's student in Software Systems at Kongu Engineering College, passionate about
                 building innovative solutions that make a real-world impact. With expertise in full-stack
                 development, I specialize in creating scalable web and mobile applications using modern
@@ -56,7 +56,7 @@ export default function About() {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={300}>
-              <p className="about-text">
+              <p className="about-text" style={{ textAlign: 'justify' }}>
                 My journey includes winning prestigious hackathons like CTPG Ideathon 2025 (1st Prize) and
                 CTPG Proof Of Concept 2025 (1st Prize), where I developed the "Ease" App—a gamified
                 mobile application with AI waste detection for sustainable living. I'm always eager to

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const NAV_SECTIONS = ['home', 'about', 'resume', 'certificates', 'internships', 'skills', 'projects', 'contact'];
+const NAV_SECTIONS = ['home', 'about', 'achievements', 'certificates', 'internships', 'skills', 'projects', 'contact'];
 
 export default function Navbar() {
   const [active, setActive] = useState('home');
@@ -14,8 +14,14 @@ export default function Navbar() {
 
   useEffect(() => {
     // apply theme to document body
-    if (theme === 'light') document.documentElement.classList.add('light');
-    else document.documentElement.classList.remove('light');
+    const root = document.documentElement;
+    if (theme === 'light') {
+      root.classList.add('light');
+      root.classList.remove('dark');
+    } else {
+      root.classList.remove('light');
+      root.classList.add('dark');
+    }
     try { localStorage.setItem('theme', theme); } catch (e) { }
   }, [theme]);
 

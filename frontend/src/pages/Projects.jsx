@@ -11,19 +11,20 @@ const projects = [
     award: '🏆 CTPG Ideathon 2025 Winner'
   },
   {
+    title: 'MindAid – Counselling & Well-Being Hub',
+    desc: 'A modern mental wellness platform built with React, Firebase, and a premium UI. MindAid enables users to connect with licensed counsellors, book secure sessions, track their mood, and explore curated well-being resources. Includes full role-based authentication, admin dashboards, resource management, and counsellor availability scheduling.',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80',
+    tech: ['React', 'Firebase', 'Firestore', 'TailwindCSS', 'Vercel'],
+    category: 'Web App',
+    featured: true
+  },
+  {
     title: 'Student Attendance Tracker',
     desc: 'Full-stack React/Node.js/MongoDB dashboard with role-based access, real-time attendance tracking, analytics/exports, and secure campus-restricted submission.',
     image: '/Attendance-tracker.png',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel'],
     category: 'Web App',
     featured: true
-  },
-  {
-    title: 'Wool Monitoring System (Farm to Fabric)',
-    desc: 'Application designed, developed, and tested within a team of 6 using Figma and MIT Tools for monitoring wool production from farm to fabric.',
-    image: '/fleece.jpg',
-    tech: ['Figma', 'MIT App Inventor', 'Firebase'],
-    category: 'Mobile App'
   },
   {
     title: 'Organic Products E-Commerce App',

@@ -26,7 +26,7 @@ const projects = [
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel'],
     category: 'Web App',
     featured: true,
-    liveUrl: 'https://student-attendance-tracker-gilt.vercel.app'
+    liveUrl: 'https://attendance-kiruthik.vercel.app'
   },
   {
     title: 'Organic Products E-Commerce App',

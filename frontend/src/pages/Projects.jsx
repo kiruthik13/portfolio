@@ -16,7 +16,8 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80',
     tech: ['React', 'Firebase', 'Firestore', 'TailwindCSS', 'Vercel'],
     category: 'Web App',
-    featured: true
+    featured: true,
+    liveUrl: 'https://mind-aid-counselling-and-well-being.vercel.app'
   },
   {
     title: 'Student Attendance Tracker',
@@ -24,7 +25,8 @@ const projects = [
     image: '/Attendance-tracker.png',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel'],
     category: 'Web App',
-    featured: true
+    featured: true,
+    liveUrl: 'https://student-attendance-tracker-gilt.vercel.app'
   },
   {
     title: 'Organic Products E-Commerce App',
@@ -85,6 +87,17 @@ export default function Projects() {
                     <span key={tech} className="tech-tag">{tech}</span>
                   ))}
                 </div>
+
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="preview-btn"
+                  >
+                    🔗 Live Preview
+                  </a>
+                )}
               </div>
             </article>
           ))}

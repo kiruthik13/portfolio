@@ -2,6 +2,15 @@ import { useState } from 'react';
 
 const projects = [
   {
+    title: 'Fencing Business Management Application',
+    desc: 'Full-stack React/Node.js/MongoDB platform for managing fencing project orders, customer details, material tracking, staff assignments, billing, and real-time project progress. Includes an admin dashboard, secure authentication, automated email notifications, and fully responsive UI.',
+    image: '/fencing-dashboard.png',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel'],
+    category: 'Web App',
+    featured: true,
+    liveUrl: 'https://fencing-business-management-applica.vercel.app'
+  },
+  {
     title: 'Environment Waste Management System - "Ease" App',
     desc: 'Gamified mobile app with AI waste detection, eco-points rewards, and recycling locator to promote sustainable living. Winner of CTPG Ideathon 2025.',
     image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80',

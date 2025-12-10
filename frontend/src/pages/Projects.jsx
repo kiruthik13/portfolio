@@ -40,7 +40,7 @@ const projects = [
   {
     title: 'Organic Products E-Commerce App',
     desc: 'Mobile-based Flutter application providing customers with a convenient way to shop for natural and eco-friendly products.',
-    image: '/online ecommerce app.jpg',
+    image: '/valari-ecommerce.png',
     tech: ['Flutter', 'Dart', 'Firebase Auth', 'Firestore'],
     category: 'Mobile App'
   }

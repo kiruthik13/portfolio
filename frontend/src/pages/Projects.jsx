@@ -31,7 +31,7 @@ const projects = [
   {
     title: 'Student Attendance Tracker',
     desc: 'Full-stack React/Node.js/MongoDB dashboard with role-based access, real-time attendance tracking, analytics/exports, and secure campus-restricted submission.',
-    image: '/Attendance-tracker.png',
+    image: '/attendance-dashboard-creative.png',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel'],
     category: 'Web App',
     featured: true,

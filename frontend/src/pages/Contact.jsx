@@ -51,7 +51,7 @@ export default function Contact() {
                     name="name"
                     value={form.name}
                     onChange={onChange}
-                    placeholder="Kiruthik C"
+                    placeholder="Enter your full name"
                     required
                     className="premium-input"
                   />
@@ -64,7 +64,7 @@ export default function Contact() {
                     name="email"
                     value={form.email}
                     onChange={onChange}
-                    placeholder="kiruthik@gmail.com"
+                    placeholder="yourname@example.com"
                     required
                     className="premium-input"
                   />
@@ -80,7 +80,7 @@ export default function Contact() {
                     name="phone"
                     value={form.phone}
                     onChange={onChange}
-                    placeholder="+91 9345304921"
+                    placeholder="e.g., +91 9876543210"
                     className="premium-input"
                   />
                 </div>
@@ -92,7 +92,7 @@ export default function Contact() {
                     name="subject"
                     value={form.subject}
                     onChange={onChange}
-                    placeholder="Project Inquiry"
+                    placeholder="e.g., Project Inquiry"
                     className="premium-input"
                   />
                 </div>
@@ -105,7 +105,7 @@ export default function Contact() {
                   name="message"
                   value={form.message}
                   onChange={onChange}
-                  placeholder="Ask me anything..."
+                  placeholder="e.g., Describe your project or question…"
                   required
                   rows="6"
                   className="premium-textarea"
@@ -134,6 +134,13 @@ export default function Contact() {
                   <div className="info-content">
                     <div className="info-label">Email</div>
                     <div className="info-value">kiruthikbairavan13@gmail.com</div>
+                  </div>
+                </a>
+                <a href="tel:+919345304921" className="contact-info-item">
+                  <div className="info-icon">📱</div>
+                  <div className="info-content">
+                    <div className="info-label">Mobile</div>
+                    <div className="info-value">+91 9345304921</div>
                   </div>
                 </a>
                 <a href="https://github.com/kiruthik13" target="_blank" rel="noopener noreferrer" className="contact-info-item">

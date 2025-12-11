@@ -104,10 +104,10 @@ export default function Home() {
             {/* Floating Badge */}
             <div className="floating-badge">
               <div className="badge-content">
-                <span className="badge-emoji">🏆</span>
+                <span className="badge-emoji">💻</span>
                 <div className="badge-info">
-                  <div className="badge-title">Award Winner</div>
-                  <div className="badge-subtitle">CTPG 2025</div>
+                  <div className="badge-title">Full-Stack Developer</div>
+                  <div className="badge-subtitle">React & Node.js</div>
                 </div>
               </div>
             </div>

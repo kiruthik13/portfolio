@@ -36,6 +36,7 @@ app.use(express.json());
 const allowedOrigins = [
   'https://portfolio-kiruthik.vercel.app',
   'https://portfolio-amber-nine-c7ciranvuy.vercel.app',
+  'https://portfolio-m8odomt8t-kiruthikbairavans-projects.vercel.app',
   'http://localhost:5173',
   'http://localhost:5174',
   'http://localhost:3000'

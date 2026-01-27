@@ -8,7 +8,8 @@ const projects = [
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel'],
     category: 'Web App',
     featured: true,
-    liveUrl: 'https://fencing-business-management-applica.vercel.app'
+    liveUrl: 'https://athanooraman-fencing.vercel.app/signin',
+    adminUrl: 'https://athanooraman-fencings.vercel.app/admin-login'
   },
   {
     title: 'Environment Waste Management System - "Ease" App',
@@ -107,7 +108,18 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="project-btn live-btn"
                     >
-                      🔗 Live Preview
+                      🔗 {project.adminUrl ? 'Client Portal' : 'Live Preview'}
+                    </a>
+                  )}
+                  {project.adminUrl && (
+                    <a
+                      href={project.adminUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-btn live-btn"
+                      style={{ background: 'var(--primary-gradient)', border: 'none' }}
+                    >
+                      🔐 Admin Portal
                     </a>
                   )}
                   {project.githubUrl && (

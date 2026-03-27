@@ -108,7 +108,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="project-btn live-btn"
                     >
-                      🔗 {project.adminUrl ? 'Client Portal' : 'Live Preview'}
+                      🔗 {project.adminUrl ? 'User Sign In' : 'Live Preview'}
                     </a>
                   )}
                   {project.adminUrl && (
@@ -119,7 +119,7 @@ export default function Projects() {
                       className="project-btn live-btn"
                       style={{ background: 'var(--primary-gradient)', border: 'none' }}
                     >
-                      🔐 Admin Portal
+                      🔐 Admin Sign In
                     </a>
                   )}
                   {project.githubUrl && (

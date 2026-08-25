@@ -20,7 +20,7 @@ export default function Internships() {
         <ScrollAnimationWrapper>
           <h2 className="section-title">Internships</h2>
         </ScrollAnimationWrapper>
-        <div className="cert-grid">
+        <div className="internship-wrap">
           {internshipItems.map((item, idx) => (
             <ScrollAnimationWrapper key={`internship-${idx}`} delay={idx * 100}>
               <div className="cert-card">

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import AnimatedBackground from '../components/AnimatedBackground';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,8 +13,6 @@ export default function Home() {
       className="section hero-section premium-hero"
       style={{ scrollMarginTop: '90px' }}
     >
-      <AnimatedBackground />
-
       <div className="container hero">
         <div className={`hero-content ${isVisible ? 'visible' : ''}`}>
           {/* Premium Badge */}
@@ -98,7 +95,7 @@ export default function Home() {
           <div className="premium-image-container">
             {/* Profile Image */}
             <div className="premium-avatar">
-              <img src="/profile.jpg" alt="Kiruthikbairavan C" />
+              <img src="/profile.jpeg" alt="Kiruthikbairavan C" />
             </div>
 
             {/* Floating Badge */}

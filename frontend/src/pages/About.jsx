@@ -22,7 +22,7 @@ export default function About() {
 
               {/* Image Container */}
               <div className="about-image-container">
-                <img src="/profile.jpg" alt="Kiruthikbairavan C" />
+                <img src="/profile.jpeg" alt="Kiruthikbairavan C" />
               </div>
 
               {/* Decorative Dots */}

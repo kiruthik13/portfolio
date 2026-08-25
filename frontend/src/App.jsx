@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar';
+import LiquidGlassBackground from './components/LiquidGlassBackground';
 import Home from './pages/Home';
 import About from './pages/About';
 import Achievements from './pages/Achievements';
@@ -11,6 +12,7 @@ import Contact from './pages/Contact';
 export default function App() {
   return (
     <>
+      <LiquidGlassBackground />
       <Navbar />
       <main className="main-content">
         <Home />
@@ -25,3 +27,4 @@ export default function App() {
     </>
   );
 }
+

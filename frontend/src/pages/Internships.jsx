@@ -29,59 +29,71 @@ export default function Internships() {
         <ScrollAnimationWrapper>
           <h2 className="section-title">Internships</h2>
         </ScrollAnimationWrapper>
-        <div className="internship-wrap">
+
+        <div className="internship-container-wrap">
           {internshipItems.map((item, idx) => (
-            <ScrollAnimationWrapper key={`internship-${item.id || idx}`} delay={idx * 100}>
-              <div className="cert-card" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div className="cert-media internship-media">
-                  <img
-                    src={item.image}
-                    alt={item.heading}
-                    className="internship-logo-img"
-                  />
+            <ScrollAnimationWrapper key={`internship-${item.id || idx}`} delay={100}>
+              <div className="internship-card">
+                {/* Left Media Box */}
+                <div className="internship-aside">
+                  <div className="internship-logo-box">
+                    <img
+                      src={item.image}
+                      alt={item.heading}
+                      className="internship-logo"
+                    />
+                  </div>
                   {item.file && (
-                    <a className="cert-view" href={item.file} target="_blank" rel="noopener noreferrer">
-                      👁 View Full Certificate
+                    <a
+                      className="btn-cert-view"
+                      href={item.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>👁</span> View Certificate
                     </a>
                   )}
                 </div>
-                <div className="cert-card-body" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', gap: 8, alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-                    <span className="chip">{item.engagement}</span>
-                    {item.statusColor === 'green' ? (
-                      <span className="chip" style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#10b981', borderColor: 'rgba(16, 185, 129, 0.3)', fontWeight: 600 }}>
-                        ✓ Status: {item.status}
-                      </span>
-                    ) : (
-                      <span className="chip" style={{ background: 'rgba(59, 130, 246, 0.15)', color: '#3b82f6', borderColor: 'rgba(59, 130, 246, 0.3)', fontWeight: 600 }}>
-                        🔵 Status: {item.status}
-                      </span>
+
+                {/* Right Content Area */}
+                <div className="internship-main">
+                  <div className="internship-header-chips">
+                    <span className="chip engagement-chip">{item.engagement}</span>
+                    <span className="chip status-chip-completed">
+                      ✓ Status: {item.status}
+                    </span>
+                  </div>
+
+                  <h3 className="internship-role-title">
+                    {item.subheading}
+                  </h3>
+
+                  <div className="internship-company-row">
+                    <span className="company-label">Company:</span>{' '}
+                    <strong className="company-name">{item.heading}</strong>
+                  </div>
+
+                  <div className="internship-meta-row">
+                    <div className="meta-item">
+                      <span>🗓 <strong>Period:</strong> {item.timeline}</span>
+                    </div>
+                    {item.location && (
+                      <div className="meta-item">
+                        <span>📍 <strong>Location:</strong> {item.location}</span>
+                      </div>
                     )}
                   </div>
 
-                  <h4 className="cert-title" style={{ marginTop: 12, fontSize: '20px', fontWeight: 700 }}>
-                    {item.subheading}
-                  </h4>
-
-                  <div className="cert-issuer" style={{ fontSize: '14px', lineHeight: 1.5 }}>
-                    Company: <strong>{item.heading}</strong>
-                  </div>
-
-                  <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', fontSize: '13px', color: 'var(--muted)', marginTop: 4 }}>
-                    <span>🗓 <strong>Period:</strong> {item.timeline}</span>
-                    {item.location && <span>📍 <strong>Location:</strong> {item.location}</span>}
-                  </div>
-
                   {item.authority && (
-                    <div style={{ fontSize: '13px', color: 'var(--muted)', marginTop: 2 }}>
-                      ✍️ <strong>Issued by:</strong> {item.authority}
+                    <div className="internship-authority-row">
+                      <span>✍️ <strong>Issued by:</strong> {item.authority}</span>
                     </div>
                   )}
 
                   {item.points && (
-                    <ul style={{ fontSize: '13.5px', margin: '12px 0 0 18px', padding: 0, color: 'var(--muted)', lineHeight: 1.6, marginTop: 'auto' }}>
+                    <ul className="internship-highlights-list">
                       {item.points.map((point) => (
-                        <li key={point} style={{ margin: '6px 0' }}>
+                        <li key={point} className="highlight-item">
                           {point}
                         </li>
                       ))}

@@ -97,17 +97,6 @@ export default function Home() {
             <div className="premium-avatar">
               <img src="/profile.jpeg" alt="Kiruthikbairavan C" />
             </div>
-
-            {/* Floating Badge */}
-            <div className="floating-badge">
-              <div className="badge-content">
-                <span className="badge-emoji">💻</span>
-                <div className="badge-info">
-                  <div className="badge-title">Full-Stack Developer</div>
-                  <div className="badge-subtitle">React & Node.js</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

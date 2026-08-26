@@ -4,22 +4,6 @@ const internshipItems = [
   {
     id: 1,
     type: 'logo',
-    heading: 'NavaNala Technologies Private Limited',
-    subheading: 'Software Trainee',
-    engagement: 'Structured Training Engagement',
-    timeline: '14th July 2026 — Present',
-    status: 'Ongoing',
-    statusColor: 'blue',
-    points: [
-      'Software development and skill development training focused on practical software engineering activities.',
-      'Engaged in professional industry standards, clean code architecture, and assigned company projects.',
-      'Hands-on execution in full-stack feature delivery and modern scalable development workflows.',
-    ],
-    image: '/navanala-text.png',
-  },
-  {
-    id: 2,
-    type: 'logo',
     heading: 'Twincord Technologies Private Limited',
     subheading: 'Intern – App Development',
     engagement: 'Industry Internship',
@@ -43,7 +27,7 @@ export default function Internships() {
     <section id="internships" className="section" style={{ scrollMarginTop: '90px' }}>
       <div className="container">
         <ScrollAnimationWrapper>
-          <h2 className="section-title">Internships & Training</h2>
+          <h2 className="section-title">Internships</h2>
         </ScrollAnimationWrapper>
         <div className="internship-wrap">
           {internshipItems.map((item, idx) => (

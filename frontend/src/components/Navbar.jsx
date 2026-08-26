@@ -68,7 +68,7 @@ export default function Navbar() {
   return (
     <header className="navbar navbar-animate">
       <div className="container navbar-inner">
-        <a href="#home" className="brand" onClick={(e) => handleNavClick(e, 'home')}>Kiruthik</a>
+        <a href="#home" className="brand" onClick={(e) => handleNavClick(e, 'home')}>Kiruthik Chidambaram</a>
         <nav className="nav-links">
           {NAV_SECTIONS.map(section => (
             <a

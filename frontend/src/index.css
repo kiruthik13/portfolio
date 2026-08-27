@@ -266,22 +266,19 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  height: 64px;
   display: flex;
-  align-items: center;
-  background: rgba(10, 10, 16, 0.65) !important;
+  flex-direction: column;
+  background: rgba(10, 10, 16, 0.72) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
   z-index: 9999;
   transition: all 0.3s ease;
 }
 
 :root.light .navbar {
-  background: rgba(255, 255, 255, 0.75) !important;
+  background: rgba(255, 255, 255, 0.82) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
 }
 
 .navbar-inner {
@@ -289,6 +286,8 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 14px 20px;
+  min-height: 64px;
+  box-sizing: border-box;
 }
 
 .brand {
@@ -296,6 +295,12 @@ img {
   font-size: 20px;
   letter-spacing: 0.5px;
   color: var(--pink);
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.brand:hover {
+  opacity: 0.85;
 }
 
 .nav-links {
@@ -306,6 +311,34 @@ img {
 .nav-link {
   color: #ffffff;
   transition: color .2s ease;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+:root.light .mobile-menu-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: #6366f1;
+}
+
+.mobile-nav-drawer {
+  display: none;
+  width: 100%;
 }
 
 .nav-link:hover {
@@ -3333,13 +3366,364 @@ img {
   }
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
+/* ============================================
+   RESPONSIVE & MOBILE COMPACT STYLES
+   ============================================ */
+
+/* Tablet & Mobile Navigation Breakpoint */
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  .brand {
+    font-size: 17px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60vw;
+  }
+
+  .mobile-nav-drawer {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+    opacity: 0;
+    background: rgba(12, 12, 20, 0.95);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  :root.light .mobile-nav-drawer {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-nav-drawer.open {
+    max-height: 480px;
+    opacity: 1;
+  }
+
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 18px 18px 18px;
+    gap: 4px;
+  }
+
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+
+  .mobile-nav-link .nav-indicator {
+    font-size: 16px;
+    color: rgba(99, 102, 241, 0.5);
+  }
+
+  .mobile-nav-link.active {
+    background: rgba(99, 102, 241, 0.16);
+    color: #818cf8;
+  }
+
+  :root.light .mobile-nav-link.active {
+    background: rgba(99, 102, 241, 0.12);
+    color: #4f46e5;
+  }
+}
+
+/* Mobile Devices Breakpoint */
+@media (max-width: 768px) {
+  .main-content {
+    gap: 44px;
+    padding-top: 68px;
+    padding-bottom: 36px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section {
+    padding: 36px 0;
   }
 
   .section-title {
-    font-size: 36px;
+    font-size: 28px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Hero Section Mobile */
+  .hero {
+    flex-direction: column-reverse;
+    gap: 28px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .premium-badge {
+    margin: 0 auto 14px auto;
+    font-size: 12.5px;
+    padding: 6px 14px;
+  }
+
+  .hero-title,
+  .premium-title {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-subtitle,
+  .premium-subtitle {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-description,
+  .premium-description {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+    max-width: 100% !important;
+  }
+
+  .hero-actions,
+  .premium-actions {
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 11px 18px;
+    font-size: 14px;
+  }
+
+  .premium-social-links {
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .premium-social-links .social-link {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+
+  .premium-stats {
+    width: 100%;
+    justify-content: space-around;
+    padding: 14px 10px;
+    gap: 6px;
+    border-radius: 14px;
+  }
+
+  .stat-value {
+    font-size: 20px !important;
+  }
+
+  .stat-label {
+    font-size: 11px !important;
+  }
+
+  .premium-avatar {
+    width: 190px !important;
+    height: 190px !important;
+    margin: 0 auto;
+  }
+
+  /* About Section Mobile */
+  .premium-about-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-image-container {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .about-heading {
+    font-size: 22px !important;
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+  }
+
+  .about-skills-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Achievements Grid Mobile */
+  .achievements-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .achievement-image-wrap {
+    height: 175px !important;
+  }
+
+  .achievement-title {
+    font-size: 18px !important;
+  }
+
+  /* Certificates Grid Mobile */
+  .cert-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .cert-media img {
+    height: 185px !important;
+  }
+
+  /* Internships Mobile */
+  .internship-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .internship-media {
+    height: 190px !important;
+  }
+
+  .internship-media img,
+  .internship-logo-img {
+    max-height: 140px !important;
+  }
+
+  /* Skills Grid Mobile */
+  .skills-categories-grid-v2 {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  /* Projects Grid & Filters Mobile */
+  .project-filters {
+    gap: 8px !important;
+    margin-bottom: 22px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter-btn {
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .project-image-container {
+    height: 185px !important;
+  }
+
+  .project-info {
+    padding: 16px !important;
+  }
+
+  .project-title {
+    font-size: 18px !important;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .project-btn {
+    width: 100%;
+    padding: 10px 14px;
+  }
+
+  /* Contact Section Mobile */
+  .premium-contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .premium-contact-form {
+    padding: 20px 16px !important;
+  }
+
+  .form-group-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .premium-contact-info {
+    padding: 20px 16px !important;
+  }
+}
+
+/* Small Smartphone Breakpoint */
+@media (max-width: 480px) {
+  .hero-title,
+  .premium-title {
+    font-size: 25px !important;
+  }
+
+  .hero-subtitle,
+  .premium-subtitle {
+    font-size: 14.5px !important;
+  }
+
+  .premium-avatar {
+    width: 160px !important;
+    height: 160px !important;
+  }
+
+  .stat-value {
+    font-size: 18px !important;
+  }
+
+  .stat-label {
+    font-size: 10px !important;
+  }
+
+  .section-title {
+    font-size: 25px !important;
+  }
+
+  .btn {
+    padding: 10px 16px !important;
+    font-size: 13px !important;
   }
 }

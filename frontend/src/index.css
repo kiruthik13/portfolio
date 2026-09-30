@@ -3002,6 +3002,20 @@ img {
   border-color: #8B5CF6;
 }
 
+.admin-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  color: white;
+  border: 1px solid rgba(2, 132, 199, 0.5);
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+}
+
+.admin-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5);
+  filter: brightness(1.1);
+  border-color: #0284c7;
+}
+
 .github-btn {
   background: rgba(255, 255, 255, 0.05);
   color: var(--text);

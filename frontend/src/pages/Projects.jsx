@@ -31,13 +31,16 @@ const projects = [
     liveUrl: 'https://mind-aid-counselling-and-well-being.vercel.app'
   },
   {
-    title: 'Student Attendance Tracker',
+    title: 'Student Management System',
     desc: 'Full-stack React/Node.js/MongoDB dashboard with role-based access, real-time attendance tracking, analytics/exports, and secure campus-restricted submission.',
     image: '/attendance-dashboard-creative.png',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel'],
     category: 'Web App',
     featured: true,
-    liveUrl: 'https://attendance-kiruthik.vercel.app'
+    liveUrl: 'https://kec-student-attendance.vercel.app/',
+    liveLabel: '🎓 Student Portal',
+    adminUrl: 'https://kec-admin-attendance.vercel.app/',
+    adminLabel: '🛡️ Admin Portal'
   },
   {
     title: 'Organic Products E-Commerce App',
@@ -108,7 +111,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="project-btn live-btn"
                     >
-                      🔗 {project.adminUrl ? 'User Sign In' : 'Live Preview'}
+                      {project.liveLabel || (project.adminUrl ? '🔗 User Sign In' : '🔗 Live Preview')}
                     </a>
                   )}
                   {project.adminUrl && (
@@ -116,10 +119,9 @@ export default function Projects() {
                       href={project.adminUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="project-btn live-btn"
-                      style={{ background: 'var(--primary-gradient)', border: 'none' }}
+                      className="project-btn live-btn admin-btn"
                     >
-                      🔐 Admin Sign In
+                      {project.adminLabel || '🔐 Admin Sign In'}
                     </a>
                   )}
                   {project.githubUrl && (
